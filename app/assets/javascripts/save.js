@@ -41,8 +41,11 @@ $(function(){
         {
           uri: data
         }, function(){
-              window.open(data, '_blank', 'location=0, menubar=0, height = 400, width = 400' );
+              // window.open(data, '_blank', 'location=0, menubar=0, height = 400, width = 400' );
+              window.open('pictures/show_image', '_blank', 'location=0, menubar=0, height = 400, width = 400' );
+
         }
+
       );
 
 

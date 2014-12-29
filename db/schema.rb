@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141229013205) do
 
   create_table "pictures", force: true do |t|
     t.text     "image"
+    t.binary   "image_binary"
     t.integer  "user_id"
     t.string   "title"
     t.datetime "created_at"

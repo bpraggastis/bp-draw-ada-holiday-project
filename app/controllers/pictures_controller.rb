@@ -12,9 +12,16 @@ class PicturesController < ApplicationController
     title = "default_title"
 
     @picture = Picture.create(image: data_string,
+                              image_binary: img,
                               title: title,
                               user_id: userid)
 
     redirect_to root_path
   end
+
+  def show_image
+    @picture = Picture.last
+    send_data @picture.image_binary, :type => "image/png", :disposition => 'inline'
+  end
+  
 end
