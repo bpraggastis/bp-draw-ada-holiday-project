@@ -32,6 +32,8 @@ group :development do
   gem 'brakeman', :require => false
 end
 
+gem 'rails_12factor'
+
 gem 'carrierwave'
 gem 'mini_magick'
 # Use ActiveModel has_secure_password
