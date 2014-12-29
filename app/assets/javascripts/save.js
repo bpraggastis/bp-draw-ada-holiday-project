@@ -1,29 +1,52 @@
 $(function(){
 
-var saveButton = document.getElementById("save");
+  var saveButton = document.getElementById("save");
 
-saveButton.addEventListener('click', saveImage);
+  saveButton.addEventListener('click', saveImage);
 
-function saveImage(){
-  var data = canvas.toDataURL();
-  console.log(data);
+  function saveImage(){
+    var data = canvas.toDataURL();
+    console.log(data);
+    // window.open(data, '_blank', 'location=0, menubar=0, width=500px, height = 400px, status=0' );
+    // request = new XMLHttpRequest();
+    //
+    // request.onreadystatechange = function(){
+    //   if(request.readyState == 4 && request.status == 200){
+    //     var response = request.responseText;
+    //     window.open(response, '_blank', 'location=0, menubar=0' );
+    //
+    //   }
+    // };
+    // var parameters = "uri="+data;
+    // request.open('POST', 'pictures/create', true);
+    // request.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    // request.send(parameters);
 
-  var request = new XMLHttpRequest();
+    //
+    // $.post({
+    //     url: "pictures/create",
+    //     data: '{uri: data}',
+    //     success: function (result) {
+    //       window.alert("success!!");
+    //     },
+    //     error: function(){
+    //       window.alert("something went wrong!");
+    //       console.log(data);
+    //     }
+    //
+    //
+    //   });
+      $.post(
+        "pictures/create",
+        {
+          uri: data
+        }, function(){
+              window.open(data, '_blank', 'location=0, menubar=0, height = 400, width = 400' );
+        }
+      );
 
-  request.onreadystatechange = function(){
-    if(request.readyState == 4 && request.status == 200){
-      var response = request.responseText;
-      window.open(response, '_blank', 'location=0, menubar=0' );
-
-    }
-  };
-
-  request.open('POST', 'app/assets/php/save.php', true);
-  request.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-  request.send('img='+data);
 
 
-}
 
-
+  }
 });
