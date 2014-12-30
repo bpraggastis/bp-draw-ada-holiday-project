@@ -8,7 +8,15 @@
 </head>
 <body>
 
+
+
 <%= yield %>
+<div class="notifications">
+  <% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+  <% end -%>
+</div>
+
 
 </body>
 </html>

@@ -4,28 +4,34 @@
     Radius <span id="radval">10</span>
     <div id="decrad" class="radcontrol">-</div>
     <div id="incrad" class="radcontrol">+</div>
+  </div>
 
-
+  <div id="color-palette">
+    <div id="colors">
+    </div>
   </div>
 
 
-  <div id="colors">
-    <!-- <div class="swatch" style="background-color: violet"></div>
-    <div class="swatch" style="background-color: indigo"></div>
-    <div class="swatch" style="background-color: blue"></div>
-    <div class="swatch" style="background-color: green"></div>
-    <div class="swatch" style="background-color: yellow"></div>
-    <div class="swatch" style="background-color: orange"></div>
-    <div class="swatch active" style="background-color: red"></div>
-    <div class="swatch" style="background-color: black"></div>
-    <div class="swatch" style="background-color: white"></div> -->
-  </div>
+  <% if session[:userid] == nil %>
+    <div id="information">
+      You may doodle all you want. But to save your drawings you must first login.
+      <a href="users/new" class="btn btn-default">Login/CreateAccount</a>
+    </div>
+    <div id="save" class="hidden"></div>
+  <% else %>
+    <a href="/end_session" ><span id="logout">LogOut</span></a>
+    <div id="save">
+      Save
+    </div>
 
-  <div id="save">
-    Save
-  </div>
+  <% end %>
+
+
+  <a href="/"><span id="refresh">Refresh</span></a>
+
+
 </div>
 
 <canvas id="canvas">
-  Sorry, your browser is rubbish.
+  Sorry, your browser won't work with this application. (It's basically rubbish.)
 </canvas>

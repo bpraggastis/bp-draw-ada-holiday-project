@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   root "home#index"
   post "pictures/create", to: "pictures#create"
   get "pictures/show_image", to: "pictures#show_image"
+
+  post "/login", to: "home#login"
+  get "/end_session", to: "home#destroy"
+
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
