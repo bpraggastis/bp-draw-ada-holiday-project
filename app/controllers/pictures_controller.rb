@@ -6,7 +6,7 @@ class PicturesController < ApplicationController
                               user_id: @user.id)
     title = @user.username + "_" + @user.created_at.to_s
     @picture.update(title: title)
-    redirect_to root_path
+    render "pictures/show_image", target: "_blank"
   end
 
   def show_image
