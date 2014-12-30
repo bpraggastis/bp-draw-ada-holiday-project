@@ -1,5 +1,5 @@
 body  {
-  h1, h2 {
+  h1, h2, h3 {
     text-align: center;
   }
 }
@@ -112,7 +112,7 @@ body  {
   box-shadow: inset 0px 3px 3px rgba(0,0,0, 0.5);
 }
 
-#save, #login, #refresh, #review {
+#save, #login, #refresh, #review{
   float: right;
   height: 30px;
   padding: 8px;
@@ -122,6 +122,25 @@ body  {
   text-align: center;
   color: white;
 }
+
+
+  #zoom, #delete-picture {
+    a{
+    display: inline-block;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    padding: 3px;
+  }
+  }
+
+
+  #zoom:hover, #delete-picture:hover {
+    a {
+    background-color: #afa3a3;
+  }
+  }
+
 
 #save:hover, #login:hover, #refresh:hover, #review:hover {
   background-color: #afa3a3;

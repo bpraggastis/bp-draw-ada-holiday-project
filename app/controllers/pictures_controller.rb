@@ -9,16 +9,25 @@ class PicturesController < ApplicationController
     render "pictures/show_image", target: "_blank"
   end
 
-  def show_image(picture = Picture.last)
-    @picture = picture
+  def show_image
+    if params[:id] != nil
+      @picture = Picture.find(params[:id])
+    else
+      @picture = Picture.last
+    end
   end
-  
 
   def index
     @user = User.find(session[:userid])
     @pictures = Picture.where(user_id: @user.id)
   end
 
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to root_path
+  end
 
 
 end

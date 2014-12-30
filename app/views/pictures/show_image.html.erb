@@ -1,3 +1,5 @@
 <h2> <%= @picture.title %></h2>
+<h3><%= button_to "DELETE", delete_picture_path(@picture.id), method: "delete" , id: "delete-picture" %></h3>
 
-<img src= <%= @picture.image%> alt="Your Picture" />
+
+<img src= <%= @picture.image%> alt="Your Picture"  />
