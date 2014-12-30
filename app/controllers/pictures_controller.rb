@@ -9,10 +9,15 @@ class PicturesController < ApplicationController
     render "pictures/show_image", target: "_blank"
   end
 
-  def show_image
-    @picture = Picture.last
+  def show_image(picture = Picture.last)
+    @picture = picture
   end
+  
 
+  def index
+    @user = User.find(session[:userid])
+    @pictures = Picture.where(user_id: @user.id)
+  end
 
 
 

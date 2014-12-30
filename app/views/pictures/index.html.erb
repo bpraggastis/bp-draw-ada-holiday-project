@@ -1,0 +1,11 @@
+<h2> <%= @user.username %>'s Masterpieces </h2>
+
+<% @pictures.each do |p| %>
+
+<div class="picture-display">
+
+    <img src = <%= p.image%> alt="a picture" width="200px" height="200px" />
+
+</div>
+
+<% end %>
