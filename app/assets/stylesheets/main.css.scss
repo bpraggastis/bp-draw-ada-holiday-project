@@ -1,10 +1,18 @@
 body  {
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     text-align: center;
   }
 }
 
+#masterpiece {
+  display: inline-block;
+  border: double green 1em;
+  margin-top: 20px;
+}
 
+#masterpiece-container, #choice-container {
+  text-align: center;
+}
 
 .notifications {
   display: block;
@@ -74,6 +82,7 @@ body  {
 
 #rad {
   float: left;
+  margin-left: 20px;
 }
 
 
@@ -112,7 +121,7 @@ body  {
   box-shadow: inset 0px 3px 3px rgba(0,0,0, 0.5);
 }
 
-#save, #login, #refresh, #review{
+#save, #login, #refresh, #review {
   float: right;
   height: 30px;
   padding: 8px;
@@ -123,26 +132,37 @@ body  {
   color: white;
 }
 
+#see-all{
+  display: inline-block;
+  height: 30px;
+  padding: 8px;
+  background-color: blue;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
 
-  #zoom, #delete-picture {
+  #zoom, {
     a{
     display: inline-block;
     background-color: blue;
     border-radius: 5px;
     color: white;
     padding: 3px;
-  }
+    cursor: pointer;
+    }
   }
 
 
-  #zoom:hover, #delete-picture:hover {
+  #zoom:hover {
     a {
     background-color: #afa3a3;
-  }
+    }
   }
 
 
-#save:hover, #login:hover, #refresh:hover, #review:hover {
+#save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover {
   background-color: #afa3a3;
   cursor: pointer;
 }
@@ -154,17 +174,33 @@ a {
             padding: 8px;
             margin-right: 10px;
             background-color: #f00;
-
+            cursor: pointer;
             border-radius: 5px;
             text-align: center;
             color: white;
           }
 
-  #logout:hover {
+  #delete-picture {
+            display: inline-block;
+            height: 30px;
+            padding: 8px;
+            margin-right: 10px;
+            background-color: #f00;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+          }
+
+  #logout:hover, #delete-picture:hover {
                   background-color: #800;
                   cursor: pointer;
                 }
+
+
 }
+
+
 
 .picture-display {
   display: inline-block;

@@ -1,12 +1,47 @@
+// $(function(){
+//
+//
+//   var saveButton = document.getElementById("save");
+//   saveButton.addEventListener('click', saveImage);
+//   function saveImage(){
+//     var data = canvas.toDataURL();
+//     console.log(data);
+//
+//     $.post(
+//       "pictures/create",
+//       {
+//         uri: data
+//       }, function(){
+//         window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+//       }
+//     );
+//   }
+//
+// });
+
 $(function(){
+  $("#save").click(saveImage);
+});
+
+function saveImage(){
+  var data = canvas.toDataURL();
+  console.log(data);
+  $.post(
+    "pictures/create",
+    {
+      uri: data
+    }, function(){
+      window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+    }
+  );
+}
 
 
-  var saveButton = document.getElementById("save");
-  saveButton.addEventListener('click', saveImage);
 
-  function saveImage(){
-    var data = canvas.toDataURL();
-    console.log(data);
+
+
+
+
     // window.open(data, '_blank', 'location=0, menubar=0, width=500px, height = 400px, status=0' );
     // request = new XMLHttpRequest();
     //
@@ -36,15 +71,3 @@ $(function(){
     //
     //
     //   });
-      $.post(
-        "pictures/create",
-        {
-          uri: data
-        }, function(){
-              window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
-        }
-
-      );
-
-  }
-});

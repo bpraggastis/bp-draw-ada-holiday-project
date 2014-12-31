@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   root "home#index"
   post "pictures/create", to: "pictures#create"
 
+  get "pictures/index", to: "pictures#index", as: :pictures
+
   get "pictures/show_image/:id", to: "pictures#show_image", as: :show_image
   get "pictures/show_image", to: "pictures#show_image"
 
   post "/login", to: "home#login"
   get "/end_session", to: "home#destroy"
 
-  get "pictures/index", to: "pictures#index"
+
 
   delete "pictures/:id", to: "pictures#destroy", as: :delete_picture
 
