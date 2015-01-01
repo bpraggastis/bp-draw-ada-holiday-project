@@ -2,11 +2,11 @@
 
 <% @pictures.each do |picture| %>
 
-<div class="picture-display">
-  <img src = <%= picture.image%> alt="a picture" width="200px" height="200px"  />
-<div id="zoom">
-  <%= link_to "Zoom", show_image_path("#{picture.id}") %>
-</div>
-</div>
+  <%= link_to show_image_path("#{picture.id}") do %>
+    <div class="picture-display">
+      <img src = <%= picture.image%> alt="a picture" width="200px" height="200px"  /><br/>
+      <%= picture.title %>
+    </div>
+  <% end %>
 
 <% end %>
