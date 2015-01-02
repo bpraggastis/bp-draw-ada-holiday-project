@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
 
   def index
+    if session[:pictureid] != nil
+      @img = Picture.find(session[:pictureid]).image
+    else
+      @img = Picture.last.image
+    end
 
   end
 

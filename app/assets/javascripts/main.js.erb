@@ -6,6 +6,8 @@ $(function(){
   ctx  = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  img = "image/#{@img}"
+  ctx.drawImage(img,0,0);
 
 
   var dragging = false;

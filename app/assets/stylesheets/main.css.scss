@@ -132,7 +132,7 @@ body  {
   color: white;
 }
 
-#see-all{
+#see-all, #edit{
   display: inline-block;
   height: 30px;
   padding: 8px;
@@ -162,7 +162,7 @@ body  {
   }
 
 
-#save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover {
+#save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover, #edit:hover {
   background-color: #afa3a3;
   cursor: pointer;
 }

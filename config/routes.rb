@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "pictures/show_image/:id", to: "pictures#show_image", as: :show_image
   get "pictures/show_image", to: "pictures#show_image"
 
+  get "pictures/edit/:id", to: "pictures#edit", as: :edit_picture
+  post "pictures/update/:id", to: "pictures#update", as: :update_picture
+
   post "/login", to: "home#login"
   get "/end_session", to: "home#destroy"
 

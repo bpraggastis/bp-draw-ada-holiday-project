@@ -6,6 +6,7 @@ class PicturesController < ApplicationController
                               user_id: @user.id)
     title = @user.username + "_" + @user.created_at.to_s
     @picture.update(title: title)
+    session[:pictureid] = @picture.id
     render "pictures/show_image", target: "_blank"
   end
 
@@ -13,8 +14,19 @@ class PicturesController < ApplicationController
     if params[:id] != nil
       @picture = Picture.find(params[:id])
     else
-      @picture = Picture.last
+      @picture = Picture.find(session[:pictureid])
     end
+  end
+
+  def edit
+    session[:pictureid] = @picture.id
+    redirect_to root_path
+  end
+
+  def update
+    @picture = Picture.find(session[:pictureid])
+    @picture.update(image: params[:uri])
+    redirect_to pictures_path
   end
 
   def index
