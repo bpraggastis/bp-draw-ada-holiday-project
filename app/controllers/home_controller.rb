@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     if session[:pictureid] != nil
       @img = Picture.find(session[:pictureid]).image
     else
-      @img = Picture.last.image
+      @img = nil
     end
 
   end

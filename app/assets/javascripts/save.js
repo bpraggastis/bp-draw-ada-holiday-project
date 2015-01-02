@@ -26,14 +26,26 @@ $(function(){
 function saveImage(){
   var data = canvas.toDataURL();
   console.log(data);
-  $.post(
-    "pictures/create",
-    {
-      uri: data
-    }, function(){
-      window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
-    }
-  );
+  if(img !== null){
+    $.post(
+      "pictures/create",
+      {
+        uri: data
+      }, function(){
+        window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+      }
+    );
+  }
+  else{
+    $.post(
+      "pictures/update",
+      {
+        uri: data
+      }, function(){
+        window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+      }
+    );
+  }
 }
 
 

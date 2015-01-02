@@ -6,9 +6,12 @@ $(function(){
   ctx  = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  img = "image/#{@img}"
-  ctx.drawImage(img,0,0);
 
+  img = new Image();
+  img.onload = function(){
+    ctx.drawImage(img,0,0);
+  }
+  img.src = $('meta[name=img]').attr('content');
 
   var dragging = false;
   ctx.lineWidth = radius*2;
