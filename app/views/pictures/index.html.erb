@@ -1,13 +1,15 @@
 <h2> <%= @user.username.capitalize %>'s Masterpieces </h2>
 
 <div id="choice-container">
-  
+
 
   <%= link_to(root_path) do %>
   <span id="go-home">DRAW SOME MORE</span>
   <% end %>
 
+
 </div>
+
 
 <% @pictures.each do |picture| %>
 
