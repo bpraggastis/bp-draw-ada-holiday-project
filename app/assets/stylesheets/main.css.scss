@@ -132,7 +132,7 @@ body  {
   color: white;
 }
 
-#see-all, #edit{
+#see-all, #edit, #go-home {
   display: inline-block;
   height: 30px;
   padding: 8px;
@@ -141,6 +141,10 @@ body  {
   border-radius: 5px;
   text-align: center;
   color: white;
+}
+
+#go-home {
+  background-color: green;
 }
 
   #zoom, {
@@ -162,7 +166,7 @@ body  {
   }
 
 
-#save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover, #edit:hover {
+#save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover, #edit:hover, #go-home:hover {
   background-color: #afa3a3;
   cursor: pointer;
 }

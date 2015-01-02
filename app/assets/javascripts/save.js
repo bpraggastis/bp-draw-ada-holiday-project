@@ -20,19 +20,26 @@
 // });
 
 $(function(){
+
   $("#save").click(saveImage);
+
 });
 
 function saveImage(){
   var data = canvas.toDataURL();
+  var id = $('meta[name=idx]').attr('content');
+  var idx = parseInt(idx);
+  console.log(id);
   console.log(data);
-  if(img !== null){
+  if(idx !== null){
     $.post(
       "pictures/create",
       {
         uri: data
       }, function(){
-        window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+        alert("Your picture was saved!");
+
+        // window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
       }
     );
   }
@@ -42,7 +49,9 @@ function saveImage(){
       {
         uri: data
       }, function(){
-        window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+        alert("Your picture was updated.");
+
+        // window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
       }
     );
   }
