@@ -38,8 +38,9 @@ function saveImage(){
         uri: data
       }, function(){
         alert("Your picture was saved!");
+        // window.open('pictures/display_image', '_blank', 'location=0, menubar=0, width=200, height=600' );
+        window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
 
-        // window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
       }
     );
   }
@@ -50,8 +51,7 @@ function saveImage(){
         uri: data
       }, function(){
         alert("Your picture was updated.");
-
-        // window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
+        // window.open('pictures/display_image', '_blank', 'location=0, menubar=0, width=200, height=200' );
       }
     );
   }

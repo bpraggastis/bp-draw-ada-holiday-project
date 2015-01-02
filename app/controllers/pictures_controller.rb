@@ -21,6 +21,11 @@ class PicturesController < ApplicationController
     session[:pictureid] = nil
   end
 
+  def display_image
+    @picture = Picture.last
+
+  end
+
   def edit
     session[:pictureid] = params[:id]
     redirect_to root_path
