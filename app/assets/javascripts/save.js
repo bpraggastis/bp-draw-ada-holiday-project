@@ -28,16 +28,14 @@ $(function(){
 function saveImage(){
   var data = canvas.toDataURL();
   var id = $('meta[name=idx]').attr('content');
-  var idx = parseInt(idx);
-  console.log(id);
-  console.log(data);
-  if(idx !== null){
+
+  if(id){
     $.post(
-      "pictures/create",
+      "pictures/update",
       {
         uri: data
       }, function(){
-        alert("Your picture was saved!");
+        alert("Your picture was updated!");
         // window.open('pictures/display_image', '_blank', 'location=0, menubar=0, width=200, height=600' );
         window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
 
@@ -46,12 +44,12 @@ function saveImage(){
   }
   else{
     $.post(
-      "pictures/update",
+      "pictures/create",
       {
         uri: data
       }, function(){
-        alert("Your picture was updated.");
-        // window.open('pictures/display_image', '_blank', 'location=0, menubar=0, width=200, height=200' );
+        alert("Your picture was saved.");
+        window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
       }
     );
   }
