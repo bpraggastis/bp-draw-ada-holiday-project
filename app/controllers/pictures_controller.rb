@@ -50,5 +50,10 @@ class PicturesController < ApplicationController
     redirect_to pictures_path
   end
 
+  def cancel
+    session[:pictureid] = nil
+    redirect_to root_path
+  end
+
 
 end

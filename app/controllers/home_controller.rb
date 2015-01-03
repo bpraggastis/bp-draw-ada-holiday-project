@@ -30,6 +30,7 @@ class HomeController < ApplicationController
 
   def destroy
     session[:userid] = nil
+    session[:pictureid] = nil
     redirect_to root_path, notice: "You have successfully Logged Out."
   end
 

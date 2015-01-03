@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "pictures/show_image", to: "pictures#show_image"
   get "pictures/display_image", to: "pictures#display_image", as: :display_image
 
+  get "pictures/cancel", to: "pictures#cancel", as: :cancel_picture
   get "pictures/edit/:id", to: "pictures#edit", as: :edit_picture
   post "pictures/update", to: "pictures#update", as: :update_picture
 

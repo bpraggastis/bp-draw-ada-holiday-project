@@ -42,6 +42,7 @@ function saveImage(){
         window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
         $("#save").html("SAVE");
         id = undefined;
+        $("#cancel").addClass("hidden");
 
       }
     );
@@ -56,6 +57,7 @@ function saveImage(){
         window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
         $("#save").html("SAVE");
         id = undefined;
+        $("#cancel").addClass("hidden");
       }
     );
   }

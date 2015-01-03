@@ -121,7 +121,7 @@ body  {
   box-shadow: inset 0px 3px 3px rgba(0,0,0, 0.5);
 }
 
-#save, #login, #refresh, #review {
+#save, #login, #refresh, #review, #cancel {
   float: right;
   height: 30px;
   padding: 8px;
@@ -166,7 +166,7 @@ body  {
   }
 
 
-#save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover, #edit:hover, #go-home:hover {
+  #cancel:hover, #save:hover, #login:hover, #refresh:hover, #review:hover, #see-all:hover, #edit:hover, #go-home:hover {
   background-color: #afa3a3;
   cursor: pointer;
 }

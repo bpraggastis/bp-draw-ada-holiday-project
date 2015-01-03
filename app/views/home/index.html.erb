@@ -32,6 +32,9 @@
 
 
   <a href="/" ><span id="refresh">Refresh</span></a>
+  <% if session[:pictureid] != nil %>
+    <a href="pictures/cancel"><span id="cancel">Cancel</span></a>
+    <% end %>
 
 
 </div>
