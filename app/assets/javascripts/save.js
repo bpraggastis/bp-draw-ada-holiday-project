@@ -20,8 +20,8 @@
 // });
 
 $(function(){
-  var id = $('meta[name=idx]').attr('content');
-  console.log("onload id =", id)
+  id = $('meta[name=idx]').attr('content');
+  console.log("onload id =", id);
   if(id){
     $("#save").html("UPDATE");};
 
@@ -31,8 +31,6 @@ $(function(){
 
 function saveImage(){
   var data = canvas.toDataURL();
-  var id = $('meta[name=idx]').attr('content');
-
   if(id){
     $.post(
       "pictures/update",
@@ -43,6 +41,8 @@ function saveImage(){
         // window.open('pictures/display_image', '_blank', 'location=0, menubar=0, width=200, height=600' );
         window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
         $("#save").html("SAVE");
+        id = undefined;
+
       }
     );
   }
@@ -55,6 +55,7 @@ function saveImage(){
         alert("Your picture was saved.");
         window.open(data, '_blank', 'location=0, menubar=0, width=300, height=300' );
         $("#save").html("SAVE");
+        id = undefined;
       }
     );
   }
