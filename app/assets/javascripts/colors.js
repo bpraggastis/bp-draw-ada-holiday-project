@@ -2,7 +2,6 @@ $(function(){
 
   var colors = ['black', 'grey', 'white', 'red','orange','yellow',
   'green', 'blue', 'indigo', 'violet'];
-
   for(var i=0,n=colors.length;i<n;i++){
     var swatch = document.createElement('div');
     swatch.className = 'swatch';
@@ -10,13 +9,7 @@ $(function(){
     swatch.addEventListener('click', setSwatch);
     document.getElementById('colors').appendChild(swatch);
   }
-
 });
-
-  // var swatches = document.getElementsByClassName('swatch');
-  // for(var i=0, n=swatches.length; i<n; i++){
-  //   swatches[i].addEventListener('click', setSwatch);
-  // }
 
   function setColor(color){
     ctx.fillStyle = color;

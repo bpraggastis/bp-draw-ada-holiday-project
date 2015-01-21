@@ -1,24 +1,3 @@
-// $(function(){
-//
-//
-//   var saveButton = document.getElementById("save");
-//   saveButton.addEventListener('click', saveImage);
-//   function saveImage(){
-//     var data = canvas.toDataURL();
-//     console.log(data);
-//
-//     $.post(
-//       "pictures/create",
-//       {
-//         uri: data
-//       }, function(){
-//         window.open('pictures/show_image', '_blank', 'location=0, menubar=0' );
-//       }
-//     );
-//   }
-//
-// });
-
 $(function(){
   id = $('meta[name=idx]').attr('content');
   console.log("onload id =", id);
